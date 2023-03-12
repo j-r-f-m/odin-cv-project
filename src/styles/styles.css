@@ -166,13 +166,11 @@ body {
   background-color: lightgray;
 }
 
-#input--form--container {
-  grid-row: 2 / 11;
-  grid-column: 1 / 7;
+#input--form--container,
+#output--container {
   display: flex;
   flex-direction: column;
 
-  background-color: lightblue;
   margin: 15px;
 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -182,7 +180,19 @@ body {
   min-width: 15rem;
 }
 
-#input--form--title {
+#input--form--container {
+  grid-row: 2 / 11;
+  grid-column: 1 / 7;
+  background-color: lightblue;
+}
+
+#output--container {
+  grid-row: 2 / 11;
+  grid-column: 7 / 13;
+  background-color: antiquewhite;
+}
+
+#card--title {
   padding: 15px;
   font-weight: 300;
   font-size: 1.5rem;
@@ -196,4 +206,18 @@ body {
 
 .form--inputs {
   margin-bottom: 5px;
+}
+
+.out--info {
+  margin-bottom: 5px;
+  padding: 15px;
+  display: flex;
+}
+
+.output--name {
+  margin-right: 10px;
+}
+
+.output--title {
+  padding: 15px;
 }

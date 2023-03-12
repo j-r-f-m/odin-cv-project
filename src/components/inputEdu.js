@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class PersonalInformation extends Component {
+class EducationalExperience extends Component {
   constructor(props) {
     super(props);
   }
@@ -8,27 +8,27 @@ class PersonalInformation extends Component {
   render() {
     return (
       <div id="">
-        <h3 id="input--form--title" className="form--headers">
-          Personal Information
+        <h3 id="card--title" className="form--headers">
+          Educational Experience
         </h3>
         <form id="input--form">
           <input
             type="text"
-            placeholder="First Name"
+            placeholder="School Name"
             className="form--inputs"
-            name="firstName"
+            name="schoolName"
           />
           <input
             type="text"
-            placeholder="Last Name"
+            placeholder="Title Of Study"
             className="form--inputs"
-            name="lastName"
+            name="titleOfStudy"
           />
           <input
             type="text"
-            placeholder="Phone Number"
+            placeholder="Date of Study"
             className="form--inputs"
-            name="phoneNumber"
+            name="dateOfStudy"
           />
           <div className="button--container">
             <button>Add</button>
@@ -40,4 +40,4 @@ class PersonalInformation extends Component {
   }
 }
 
-export default PersonalInformation;
+export default EducationalExperience;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import PersonalInformation from "./PersonalInformation";
-import EducationalExperience from "./EducationalExperience";
-import PracticalExperience from "./PracticalExperience";
+import PersonalInformation from "./inputPerso";
+import EducationalExperience from "./inputEdu";
+import PracticalExperience from "./inputPract";
 
 class InputForm extends Component {
   constructor(props) {

@@ -8,7 +8,7 @@ class PracticalExperience extends Component {
   render() {
     return (
       <div id="">
-        <h3 id="input--form--title" className="form--headers">
+        <h3 id="card--title" className="form--headers">
           Practical Experience
         </h3>
         <form id="input--form">

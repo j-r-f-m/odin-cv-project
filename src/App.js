@@ -2,6 +2,7 @@ import "./styles/styles.css";
 import React, { Component } from "react";
 import Header from "./components/Header";
 import InputForm from "./components/InputForm";
+import Output from "./components/Output";
 
 class App extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class App extends Component {
         <Header />
         <section id="main">
           <InputForm />
+          <Output />
         </section>
       </div>
     );
