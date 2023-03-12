@@ -13,6 +13,9 @@ class Output extends Component {
           <div className="output--name">Last Name</div>
         </div>
         <div className="output--title">Title</div>
+
+        <h3 className="output--header">Experience</h3>
+        <h3 className="output--header">Education</h3>
       </div>
     );
   }

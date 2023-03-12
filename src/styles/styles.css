@@ -218,6 +218,7 @@ body {
   margin-right: 10px;
 }
 
-.output--title {
+.output--title,
+.output--header {
   padding: 15px;
 }
