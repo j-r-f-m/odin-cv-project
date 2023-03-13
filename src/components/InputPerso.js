@@ -17,18 +17,22 @@ class PersonalInformation extends Component {
             placeholder="First Name"
             className="form--inputs"
             name="firstName"
+            // acces function passed from App.js with propsasdf
+            onChange={this.props.iptFirst}
           />
           <input
             type="text"
             placeholder="Last Name"
             className="form--inputs"
             name="lastName"
+            onChange={this.props.iptLast}
           />
           <input
-            type="text"
-            placeholder="Phone Number"
+            type="email"
+            placeholder="Title"
             className="form--inputs"
-            name="phoneNumber"
+            name="title"
+            onChange={this.props.iptTitle}
           />
           <div className="button--container">
             <button>Add</button>
