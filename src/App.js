@@ -57,18 +57,6 @@ class App extends Component {
     console.log(this.state.persInfo);
   };
 
-  onSubmitTask = (e) => {
-    e.preventDefault();
-    this.setState({
-      tasks: this.state.task,
-      task: { text: "" },
-    });
-  };
-
-  test = () => {
-    console.log(this.state);
-  };
-
   // render jsx to html??
   render() {
     return (

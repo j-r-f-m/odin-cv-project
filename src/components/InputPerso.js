@@ -28,7 +28,7 @@ class PersonalInformation extends Component {
             onChange={this.props.iptLast}
           />
           <input
-            type="email"
+            type="text"
             placeholder="Title"
             className="form--inputs"
             name="title"
