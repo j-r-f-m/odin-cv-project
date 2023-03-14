@@ -9,7 +9,7 @@ class InputEdu extends Component {
     return (
       <div id="input--Edu">
         <h3 className="form--headers card--title">Educational Experience</h3>
-        <form class="input--form">
+        <form className="input--form">
           <input
             type="text"
             placeholder="School Name"
@@ -29,7 +29,7 @@ class InputEdu extends Component {
             name="dateOfStudy"
           />
           <div className="button--container">
-            <button>Add</button>
+            <button onClick={this.props.newInputEdu}>Add</button>
             <button>Delete</button>
           </div>
         </form>

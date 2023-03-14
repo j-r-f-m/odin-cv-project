@@ -22,7 +22,7 @@ class InputForm extends Component {
           iptLast={this.props.iptLast}
           iptTitle={this.props.iptTitle}
         />
-        <InputEdu />
+        <InputEdu newInputEdu={this.props.newInputEdu} />
         <PracticalExperience />
       </div>
     );

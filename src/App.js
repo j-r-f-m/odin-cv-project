@@ -57,6 +57,11 @@ class App extends Component {
     console.log(this.state.persInfo);
   };
 
+  newInputEdu = (e) => {
+    e.preventDefault();
+    console.log(e.target.value);
+  };
+
   // render jsx to html??
   render() {
     return (
@@ -68,6 +73,7 @@ class App extends Component {
             iptFirst={this.iptFirstName}
             iptLast={this.iptLastName}
             iptTitle={this.iptTitle}
+            newInputEdu={this.newInputEdu}
           />
           <Output state={this.state} />
         </section>

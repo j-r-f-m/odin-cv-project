@@ -32,10 +32,6 @@ class InputPerso extends Component {
             name="title"
             onChange={this.props.iptTitle}
           />
-          <div className="button--container">
-            <button>Add</button>
-            <button>Delete</button>
-          </div>
         </form>
       </div>
     );
