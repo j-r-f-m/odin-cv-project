@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class PracticalExperience extends Component {
+class InputPract extends Component {
   constructor(props) {
     super(props);
   }
@@ -8,10 +8,8 @@ class PracticalExperience extends Component {
   render() {
     return (
       <div id="">
-        <h3 id="card--title" className="form--headers">
-          Practical Experience
-        </h3>
-        <form id="input--form">
+        <h3 className="form--headers card--title">Practical Experience</h3>
+        <form className="input--form">
           <input
             type="text"
             placeholder="Company Name"
@@ -53,4 +51,4 @@ class PracticalExperience extends Component {
   }
 }
 
-export default PracticalExperience;
+export default InputPract;

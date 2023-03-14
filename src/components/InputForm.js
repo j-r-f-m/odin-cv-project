@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import PersonalInformation from "./InputPerso";
-import EducationalExperience from "./InputEdu";
+import InputPerso from "./InputPerso";
+import InputEdu from "./InputEdu";
 import PracticalExperience from "./InputPract";
 
 class InputForm extends Component {
@@ -17,12 +17,12 @@ class InputForm extends Component {
       <div id="input--form--container">
         {/* access passed function from App.js with props-object and pass it to
         PersonalInformation.js wiht props */}
-        <PersonalInformation
+        <InputPerso
           iptFirst={this.props.iptFirst}
           iptLast={this.props.iptLast}
           iptTitle={this.props.iptTitle}
         />
-        <EducationalExperience />
+        <InputEdu />
         <PracticalExperience />
       </div>
     );
