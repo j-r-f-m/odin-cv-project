@@ -26,7 +26,48 @@ class Output extends Component {
             : "Title"}
         </div>
 
-        <h3 className="output--header">Experience</h3>
+        <div>
+          <h3 className="output--header">Experience</h3>
+          <div className="output--school-con">
+            {/* <div className="school--info">
+              School Name:{" "}
+              {this.props.state.schoolInfo.schoolName.length > 0
+                ? this.props.state.schoolInfo.schoolName
+                : ""}
+            </div>
+
+            <div className="school--info">
+              Title Of Study:{" "}
+              {this.props.state.schoolInfo.titleOfStudy.length > 0
+                ? this.props.state.schoolInfo.titleOfStudy
+                : ""}
+            </div>
+
+            <div className="school--info">
+              Date Of Study:{" "}
+              {this.props.state.schoolInfo.dateOfStudy.length > 0
+                ? this.props.state.schoolInfo.dateOfStudy
+                : ""}
+            </div> */}
+
+            {this.props.state.schools.map((school) => {
+              return (
+                <div key={school.schoolName} className="output--school">
+                  <div className="school--info">
+                    School Name: {school.schoolName}
+                  </div>
+                  <div className="school--info">
+                    Title Of Study: {school.titleOfStudy}
+                  </div>
+                  <div className="school--info">
+                    Date of Study: {school.dateOfStudy}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
         <h3 className="output--header">Education</h3>
       </div>
     );

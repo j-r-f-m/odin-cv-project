@@ -228,3 +228,15 @@ body {
 .output--header {
   padding: 15px;
 }
+
+.output-school {
+  padding-top: 10px;
+}
+
+.school--info {
+  padding: 5px 5px 5px 15px;
+}
+
+.output--header {
+  font-weight: 600;
+}
