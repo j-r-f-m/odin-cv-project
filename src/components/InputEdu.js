@@ -3,7 +3,18 @@ import React, { Component } from "react";
 class InputEdu extends Component {
   constructor(props) {
     super(props);
+    this.inputReference = React.createRef();
+
+    this.state = { setFocus: true };
   }
+
+  componentDidUpdate() {
+    this.inputReference.current.focus();
+  }
+
+  onFocInp = (e) => {
+    console.log(this.state);
+  };
 
   test = () => {
     console.log(this.props);
@@ -19,12 +30,14 @@ class InputEdu extends Component {
           return (
             <form key={school.schoolName} className="input--form">
               <input
+                ref={this.inputReference}
                 type="text"
                 placeholder="School Name"
                 className={`form--inputs ${school.id}`}
                 name="schoolName"
                 onChange={this.props.iptSchool}
                 value={school.schoolName}
+                onFocus={this.onFocInp}
               />
               <input
                 type="text"

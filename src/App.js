@@ -93,6 +93,22 @@ class App extends Component {
    * @param {object} e event object
    */
   iptSchoolName = (e) => {
+    // get id from input
+    const idObj = e.target.classList[1];
+    console.log(idObj);
+
+    const schoolArr = this.state.schools;
+    //console.log(schoolArr);
+    const idx = schoolArr.findIndex((ele) => ele.id === idObj);
+    console.log(idx);
+
+    let newSchoolsArr = [...schoolArr];
+    console.log(newSchoolsArr);
+    newSchoolsArr[idx] = { ...newSchoolsArr[idx], schoolName: e.target.value };
+    this.setState({
+      schools: newSchoolsArr,
+    });
+
     // const idObj = e.target.classList[1];
     // console.log(idObj);
     // const found = this.state.schools.find((school) => school.id === idObj);
@@ -107,28 +123,48 @@ class App extends Component {
     //     },
     //   });
     // }
-    this.setState({
-      schoolInfo: {
-        schoolName: e.target.value,
-        titleOfStudy: this.state.schoolInfo.titleOfStudy,
-        dateOfStudy: this.state.schoolInfo.dateOfStudy,
-        id: this.state.schoolInfo.id,
-      },
-    });
-    console.log(this.state.schoolInfo);
-    console.log(this.state.schools);
+
+    // this.setState({
+    //   schoolInfo: {
+    //     schoolName: e.target.value,
+    //     titleOfStudy: this.state.schoolInfo.titleOfStudy,
+    //     dateOfStudy: this.state.schoolInfo.dateOfStudy,
+    //     id: this.state.schoolInfo.id,
+    //   },
+    // });
+    // console.log(this.state.schoolInfo);
+    // console.log(this.state.schools);
   };
 
   iptTitleOfStudy = (e) => {
+    // get id from input
+    const idObj = e.target.classList[1];
+    console.log(idObj);
+
+    const schoolArr = this.state.schools;
+    //console.log(schoolArr);
+    const idx = schoolArr.findIndex((ele) => ele.id === idObj);
+    console.log(idx);
+
+    let newSchoolsArr = [...schoolArr];
+    console.log(newSchoolsArr);
+    newSchoolsArr[idx] = {
+      ...newSchoolsArr[idx],
+      titleOfStudy: e.target.value,
+    };
     this.setState({
-      schoolInfo: {
-        schoolName: this.state.schoolInfo.schoolName,
-        titleOfStudy: e.target.value,
-        dateOfStudy: this.state.schoolInfo.dateOfStudy,
-        id: this.state.schoolInfo.id,
-      },
+      schools: newSchoolsArr,
     });
-    console.log(this.state.schoolInfo);
+
+    // this.setState({
+    //   schoolInfo: {
+    //     schoolName: this.state.schoolInfo.schoolName,
+    //     titleOfStudy: e.target.value,
+    //     dateOfStudy: this.state.schoolInfo.dateOfStudy,
+    //     id: this.state.schoolInfo.id,
+    //   },
+    // });
+    // console.log(this.state.schoolInfo);
   };
 
   iptDateOfStudy = (e) => {
