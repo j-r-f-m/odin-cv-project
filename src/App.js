@@ -17,6 +17,7 @@ class App extends Component {
     this.iptSchoolName = this.iptSchoolName.bind(this);
     this.iptTitleOfStudy = this.iptTitleOfStudy.bind(this);
     this.iptDateOfStudy = this.iptDateOfStudy.bind(this);
+    this.eduSchoolName = this.eduSchoolName.bind(this);
 
     // state for personal information
     this.state = {
@@ -35,12 +36,14 @@ class App extends Component {
 
       schools: [
         {
+          schoolName2: "name12",
           schoolName: "name1",
           titleOfStudy: "titleStudy1",
           dateOfStudy: "date1",
           id: uniqid(),
         },
         {
+          schoolName2: "name22",
           schoolName: "name2",
           titleOfStudy: "titleStudy2",
           dateOfStudy: "date2",
@@ -88,11 +91,7 @@ class App extends Component {
 
   // --------------educational experience functionality---------------------
 
-  /**
-   * set state for educational infromation
-   * @param {object} e event object
-   */
-  iptSchoolName = (e) => {
+  eduSchoolName = (e) => {
     // get id from input
     const idObj = e.target.classList[1];
     console.log(idObj);
@@ -104,10 +103,50 @@ class App extends Component {
 
     let newSchoolsArr = [...schoolArr];
     console.log(newSchoolsArr);
-    newSchoolsArr[idx] = { ...newSchoolsArr[idx], schoolName: e.target.value };
+
+    newSchoolsArr[idx] = {
+      ...newSchoolsArr[idx],
+      schoolName2: e.target.value,
+    };
     this.setState({
       schools: newSchoolsArr,
     });
+  };
+
+  iptSchoolName = (e) => {
+    const idObj = e.target.classList[1];
+    console.log(idObj);
+
+    const schoolArr = this.state.schools;
+    //console.log(schoolArr);
+    const idx = schoolArr.findIndex((ele) => ele.id === idObj);
+    console.log(idx);
+
+    let newSchoolsArr = [...schoolArr];
+    console.log(newSchoolsArr);
+    newSchoolsArr[idx] = {
+      ...newSchoolsArr[idx],
+      schoolName: e.target.value,
+    };
+    this.setState({
+      schools: newSchoolsArr,
+    });
+
+    // get id from input
+    // const idObj = e.target.classList[1];
+    // console.log(idObj);
+
+    // const schoolArr = this.state.schools;
+    // //console.log(schoolArr);
+    // const idx = schoolArr.findIndex((ele) => ele.id === idObj);
+    // console.log(idx);
+
+    // let newSchoolsArr = [...schoolArr];
+    // console.log(newSchoolsArr);
+    // newSchoolsArr[idx] = { ...newSchoolsArr[idx], schoolName: e.target.value };
+    // this.setState({
+    //   schools: newSchoolsArr,
+    // });
 
     // const idObj = e.target.classList[1];
     // console.log(idObj);
@@ -168,15 +207,33 @@ class App extends Component {
   };
 
   iptDateOfStudy = (e) => {
+    const idObj = e.target.classList[1];
+    console.log(idObj);
+
+    const schoolArr = this.state.schools;
+    //console.log(schoolArr);
+    const idx = schoolArr.findIndex((ele) => ele.id === idObj);
+    console.log(idx);
+
+    let newSchoolsArr = [...schoolArr];
+    console.log(newSchoolsArr);
+    newSchoolsArr[idx] = {
+      ...newSchoolsArr[idx],
+      dateOfStudy: e.target.value,
+    };
     this.setState({
-      schoolInfo: {
-        schoolName: this.state.schoolInfo.schoolName,
-        titleOfStudy: this.state.schoolInfo.titleOfStudy,
-        dateOfStudy: e.target.value,
-        id: this.state.schoolInfo.id,
-      },
+      schools: newSchoolsArr,
     });
-    console.log(this.state.schoolInfo);
+
+    // this.setState({
+    //   schoolInfo: {
+    //     schoolName: this.state.schoolInfo.schoolName,
+    //     titleOfStudy: this.state.schoolInfo.titleOfStudy,
+    //     dateOfStudy: e.target.value,
+    //     id: this.state.schoolInfo.id,
+    //   },
+    // });
+    // console.log(this.state.schoolInfo);
   };
 
   onAddEdu = (e) => {
@@ -214,11 +271,12 @@ class App extends Component {
             iptFirst={this.iptFirstName}
             iptLast={this.iptLastName}
             iptTitle={this.iptTitle}
-            iptSchool={this.iptSchoolName}
+            iptSchoolName={this.iptSchoolName}
             iptTitleStudy={this.iptTitleOfStudy}
             iptDateStudy={this.iptDateOfStudy}
             onAddEduc={this.onAddEdu}
             state={this.state}
+            eduSchoolName={this.eduSchoolName}
           />
           <Output state={this.state} />
         </section>

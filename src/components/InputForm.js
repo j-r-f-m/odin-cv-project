@@ -23,12 +23,13 @@ class InputForm extends Component {
           iptTitle={this.props.iptTitle}
         />
         <InputEdu
-          iptSchool={this.props.iptSchool}
+          iptSchoolName={this.props.iptSchoolName}
           iptTitleStudy={this.props.iptTitleStudy}
           iptDateStudy={this.props.iptDateStudy}
           onAddEduc={this.props.onAddEduc}
           newInputEdu={this.props.newInputEdu}
           state={this.props.state}
+          eduSchoolName={this.props.eduSchoolName}
         />
         <PracticalExperience />
       </div>

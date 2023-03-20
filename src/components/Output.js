@@ -54,7 +54,7 @@ class Output extends Component {
               return (
                 <div key={school.schoolName} className="output--school">
                   <div className="school--info">
-                    School Name: {school.schoolName}
+                    School Name: {school.schoolName2}
                   </div>
                   <div className="school--info">
                     Title Of Study: {school.titleOfStudy}
