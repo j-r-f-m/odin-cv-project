@@ -52,7 +52,7 @@ class Output extends Component {
 
             {this.props.state.schools.map((school) => {
               return (
-                <div key={school.schoolName} className="output--school">
+                <div key={school.id} className="output--school">
                   <div className="school--info">
                     School Name: {school.schoolName2}
                   </div>

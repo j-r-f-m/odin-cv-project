@@ -210,6 +210,10 @@ body {
   flex-direction: column;
 }
 
+.button--container {
+  padding: 15px;
+}
+
 .form--inputs {
   margin-bottom: 5px;
 }

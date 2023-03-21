@@ -27,6 +27,7 @@ class App extends Component {
         title: "",
       },
 
+      // DELETE ?????
       schoolInfo: {
         schoolName: "",
         titleOfStudy: "",
@@ -53,10 +54,16 @@ class App extends Component {
     };
   }
 
-  // personal information functionality
+  // -------------------- personal information functionality -------------------
+
+  /**
+   * set state for personal information
+   * @param {object} e event-object
+   */
   iptFirstName = (e) => {
     this.setState({
       persInfo: {
+        // get new data and save it to object
         firstName: e.target.value,
         // get information that was not changed and save it as well
         lastName: this.state.persInfo.lastName,
@@ -89,25 +96,33 @@ class App extends Component {
     console.log(this.state.persInfo);
   };
 
-  // --------------educational experience functionality---------------------
+  // --------------educational experience functionality-------------------------
 
   eduSchoolName = (e) => {
-    // get id from input
+    // get id from used input
     const idObj = e.target.classList[1];
     console.log(idObj);
 
+    // save schools-array to variable
     const schoolArr = this.state.schools;
     //console.log(schoolArr);
+    // get idx of object user wants to write to
     const idx = schoolArr.findIndex((ele) => ele.id === idObj);
     console.log(idx);
 
+    // create new school-array with content of old-school array
     let newSchoolsArr = [...schoolArr];
     console.log(newSchoolsArr);
 
+    // create a new object
     newSchoolsArr[idx] = {
+      // copy old contents to new object
       ...newSchoolsArr[idx],
+      // change object-property
       schoolName2: e.target.value,
     };
+
+    // set new state for schools array with changed content
     this.setState({
       schools: newSchoolsArr,
     });
@@ -131,48 +146,6 @@ class App extends Component {
     this.setState({
       schools: newSchoolsArr,
     });
-
-    // get id from input
-    // const idObj = e.target.classList[1];
-    // console.log(idObj);
-
-    // const schoolArr = this.state.schools;
-    // //console.log(schoolArr);
-    // const idx = schoolArr.findIndex((ele) => ele.id === idObj);
-    // console.log(idx);
-
-    // let newSchoolsArr = [...schoolArr];
-    // console.log(newSchoolsArr);
-    // newSchoolsArr[idx] = { ...newSchoolsArr[idx], schoolName: e.target.value };
-    // this.setState({
-    //   schools: newSchoolsArr,
-    // });
-
-    // const idObj = e.target.classList[1];
-    // console.log(idObj);
-    // const found = this.state.schools.find((school) => school.id === idObj);
-    // console.log(found);
-    // if (found) {
-    //   this.setState({
-    //     schoolInfo: {
-    //       schoolName: e.target.value,
-    //       titleOfStudy: this.state.schoolInfo.titleOfStudy,
-    //       dateOfStudy: this.state.schoolInfo.dateOfStudy,
-    //       id: this.state.schoolInfo.id,
-    //     },
-    //   });
-    // }
-
-    // this.setState({
-    //   schoolInfo: {
-    //     schoolName: e.target.value,
-    //     titleOfStudy: this.state.schoolInfo.titleOfStudy,
-    //     dateOfStudy: this.state.schoolInfo.dateOfStudy,
-    //     id: this.state.schoolInfo.id,
-    //   },
-    // });
-    // console.log(this.state.schoolInfo);
-    // console.log(this.state.schools);
   };
 
   iptTitleOfStudy = (e) => {
@@ -194,16 +167,6 @@ class App extends Component {
     this.setState({
       schools: newSchoolsArr,
     });
-
-    // this.setState({
-    //   schoolInfo: {
-    //     schoolName: this.state.schoolInfo.schoolName,
-    //     titleOfStudy: e.target.value,
-    //     dateOfStudy: this.state.schoolInfo.dateOfStudy,
-    //     id: this.state.schoolInfo.id,
-    //   },
-    // });
-    // console.log(this.state.schoolInfo);
   };
 
   iptDateOfStudy = (e) => {
@@ -224,16 +187,6 @@ class App extends Component {
     this.setState({
       schools: newSchoolsArr,
     });
-
-    // this.setState({
-    //   schoolInfo: {
-    //     schoolName: this.state.schoolInfo.schoolName,
-    //     titleOfStudy: this.state.schoolInfo.titleOfStudy,
-    //     dateOfStudy: e.target.value,
-    //     id: this.state.schoolInfo.id,
-    //   },
-    // });
-    // console.log(this.state.schoolInfo);
   };
 
   onAddEdu = (e) => {
@@ -241,20 +194,18 @@ class App extends Component {
     // prevent reloading page on button press
     e.preventDefault();
 
-    // const parent = document.getElementById("input--Edu");
-    // console.log(parent);
+    const oldSchoolsArr = this.state.schools;
 
-    // parent.appendChild()
-
-    // this.setState({
-    //   schools: this.state.schools.concat(this.state.schoolInfo),
-    // });
+    const newSchool = {
+      schoolName2: "School Names",
+      titleOfStudy: "Title Of Study",
+      dateOfStudy: "Date Of Study",
+      id: uniqid(),
+    };
+    const newSchoolsArr = [...oldSchoolsArr, newSchool];
 
     this.setState({
-      // add school infor to array
-      // schools: this.state.schools.concat(this.state.schoolInfo),
-      // reset school info
-      // schoolInfo: { schoolName: "", titleOfStudy: "", dateOfStudy: "" },
+      schools: newSchoolsArr,
     });
 
     console.log(this.state.schools);

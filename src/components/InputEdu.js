@@ -28,7 +28,7 @@ class InputEdu extends Component {
 
         {this.props.state.schools.map((school) => {
           return (
-            <form key={school.schoolName} className="input--form">
+            <form key={school.id} className="input--form">
               <input
                 type="text"
                 placeholder="School Name"
@@ -54,14 +54,18 @@ class InputEdu extends Component {
                 onChange={this.props.iptDateStudy}
                 value={school.dateOfStudy}
               />
-              <div className="button--container">
+              {/* <div className="button--container">
                 <button onClick={this.props.onAddEduc}>Add</button>
                 <button>Delete</button>
-              </div>
+              </div> */}
             </form>
           );
         })}
 
+        <div className="button--container">
+          <button onClick={this.props.onAddEduc}>Add</button>
+          <button>Delete</button>
+        </div>
         {/* <form className="input--form">
           <input
             type="text"
