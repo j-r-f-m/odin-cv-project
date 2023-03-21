@@ -18,6 +18,13 @@ class App extends Component {
     this.iptTitleOfStudy = this.iptTitleOfStudy.bind(this);
     this.iptDateOfStudy = this.iptDateOfStudy.bind(this);
     this.eduSchoolName = this.eduSchoolName.bind(this);
+    // MISSING DELET AND ADD EDUC EXPERIECE
+    this.iptComp = this.iptComp.bind(this);
+    this.iptPosi = this.iptPosi.bind(this);
+    this.iptTask = this.iptTask.bind(this);
+    this.iptFrom = this.iptFrom.bind(this);
+    this.iptTo = this.iptTo.bind(this);
+    this.onDltComp = this.onDltComp.bind(this);
 
     // ----------------------------------- state -------------------------------
     this.state = {
@@ -197,7 +204,6 @@ class App extends Component {
    * @param {object} e event-object
    */
   onAddEdu = (e) => {
-    console.log("hi");
     // prevent reloading page on button press
     e.preventDefault();
 
@@ -255,7 +261,117 @@ class App extends Component {
 
   // -------------------------- practical experience functionality ------------_
 
-  iptPractC;
+  // input company
+  iptComp = (e) => {
+    // get id from input
+    const idObj = e.target.classList[1];
+    console.log(idObj);
+
+    const companyArray = this.state.practical;
+
+    //console.log(schoolArr);
+    const idx = companyArray.findIndex((ele) => ele.id === idObj);
+    console.log(idx);
+    let newCompanyArray = [...companyArray];
+    console.log(newCompanyArray);
+    newCompanyArray[idx] = {
+      ...newCompanyArray[idx],
+      compName: e.target.value,
+    };
+    this.setState({
+      practical: newCompanyArray,
+    });
+  };
+
+  iptPosi = (e) => {
+    // get id from input
+    const idObj = e.target.classList[1];
+    console.log(idObj);
+
+    const companyArray = this.state.practical;
+
+    //console.log(schoolArr);
+    const idx = companyArray.findIndex((ele) => ele.id === idObj);
+    console.log(idx);
+    let newCompanyArray = [...companyArray];
+    console.log(newCompanyArray);
+    newCompanyArray[idx] = {
+      ...newCompanyArray[idx],
+      position: e.target.value,
+    };
+    this.setState({
+      practical: newCompanyArray,
+    });
+  };
+
+  iptTask = (e) => {
+    // get id from input
+    const idObj = e.target.classList[1];
+    console.log(idObj);
+
+    const companyArray = this.state.practical;
+
+    //console.log(schoolArr);
+    const idx = companyArray.findIndex((ele) => ele.id === idObj);
+    console.log(idx);
+    let newCompanyArray = [...companyArray];
+    console.log(newCompanyArray);
+    newCompanyArray[idx] = {
+      ...newCompanyArray[idx],
+      task: e.target.value,
+    };
+    this.setState({
+      practical: newCompanyArray,
+    });
+  };
+
+  iptFrom = (e) => {
+    // get id from input
+    const idObj = e.target.classList[1];
+    console.log(idObj);
+
+    const companyArray = this.state.practical;
+
+    //console.log(schoolArr);
+    const idx = companyArray.findIndex((ele) => ele.id === idObj);
+    console.log(idx);
+    let newCompanyArray = [...companyArray];
+    console.log(newCompanyArray);
+    newCompanyArray[idx] = {
+      ...newCompanyArray[idx],
+      from: e.target.value,
+    };
+    this.setState({
+      practical: newCompanyArray,
+    });
+  };
+
+  iptTo = (e) => {
+    // get id from input
+    const idObj = e.target.classList[1];
+    console.log(idObj);
+
+    const companyArray = this.state.practical;
+
+    //console.log(schoolArr);
+    const idx = companyArray.findIndex((ele) => ele.id === idObj);
+    console.log(idx);
+    let newCompanyArray = [...companyArray];
+    console.log(newCompanyArray);
+    newCompanyArray[idx] = {
+      ...newCompanyArray[idx],
+      to: e.target.value,
+    };
+    this.setState({
+      practical: newCompanyArray,
+    });
+  };
+
+  /**
+   * delete educational experience
+   * @param {object} e event-object
+   */
+  onDltComp = (e) => {};
 
   // render jsx to html??
   render() {
@@ -268,13 +384,18 @@ class App extends Component {
             iptFirst={this.iptFirstName}
             iptLast={this.iptLastName}
             iptTitle={this.iptTitle}
-            iptSchoolName={this.iptSchoolName}
+            // iptSchoolName={this.iptSchoolName}
             iptTitleStudy={this.iptTitleOfStudy}
             iptDateStudy={this.iptDateOfStudy}
             onAddEduc={this.onAddEdu}
             onDltEdu={this.onDltEdu}
             state={this.state}
             eduSchoolName={this.eduSchoolName}
+            iptComp={this.iptComp}
+            iptPosi={this.iptPosi}
+            iptTask={this.iptTask}
+            iptFrom={this.iptFrom}
+            iptTo={this.iptTo}
           />
           <Output state={this.state} />
         </section>

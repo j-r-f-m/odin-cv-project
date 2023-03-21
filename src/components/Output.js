@@ -27,29 +27,8 @@ class Output extends Component {
         </div>
 
         <div>
-          <h3 className="output--header">Experience</h3>
+          <h3 className="output--header">Educational Experience</h3>
           <div className="output--school-con">
-            {/* <div className="school--info">
-              School Name:{" "}
-              {this.props.state.schoolInfo.schoolName.length > 0
-                ? this.props.state.schoolInfo.schoolName
-                : ""}
-            </div>
-
-            <div className="school--info">
-              Title Of Study:{" "}
-              {this.props.state.schoolInfo.titleOfStudy.length > 0
-                ? this.props.state.schoolInfo.titleOfStudy
-                : ""}
-            </div>
-
-            <div className="school--info">
-              Date Of Study:{" "}
-              {this.props.state.schoolInfo.dateOfStudy.length > 0
-                ? this.props.state.schoolInfo.dateOfStudy
-                : ""}
-            </div> */}
-
             {this.props.state.schools.map((school) => {
               return (
                 <div key={school.id} className="output--school">
@@ -68,7 +47,26 @@ class Output extends Component {
           </div>
         </div>
 
-        <h3 className="output--header">Education</h3>
+        <div>
+          <h3 className="output--header">PracticalExperience</h3>
+          <div className="output--school-con">
+            {this.props.state.practical.map((comp) => {
+              return (
+                <div key={comp.id} className="output--school">
+                  <div className="school--info">
+                    Company Name: {comp.compName}
+                  </div>
+                  <div className="school--info">
+                    Position Title: {comp.position}
+                  </div>
+                  <div className="school--info">Main Task: {comp.task}</div>
+                  <div className="school--info">from: {comp.from}</div>
+                  <div className="school--info">to: {comp.to}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     );
   }

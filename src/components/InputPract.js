@@ -15,34 +15,43 @@ class InputPract extends Component {
               <input
                 type="text"
                 placeholder="Company Name"
-                className="form--inputs"
+                className={`form--inputs ${comp.id}`}
                 name="companyName"
                 value={comp.compName}
+                onChange={this.props.iptComp}
               />
               <input
                 type="text"
                 placeholder="Positon Title"
-                className="form--inputs"
+                className={`form--inputs ${comp.id}`}
                 name="positionTitle"
+                value={comp.position}
+                onChange={this.props.iptPosi}
               />
               <input
                 type="text"
                 placeholder="Main Tasks Of your Job"
-                className="form--inputs"
+                className={`form--inputs ${comp.id}`}
                 name="mainTask"
+                value={comp.task}
+                onChange={this.props.iptTask}
               />
 
               <input
                 type="text"
                 placeholder="From"
-                className="form--inputs"
+                className={`form--inputs ${comp.id}`}
                 name="from"
+                value={comp.from}
+                onChange={this.props.iptFrom}
               />
               <input
                 type="text"
                 placeholder="To"
-                className="form--inputs"
+                className={`form--inputs ${comp.id}`}
                 name="to"
+                value={comp.to}
+                onChange={this.props.iptTo}
               />
               <button>Delete</button>
             </form>

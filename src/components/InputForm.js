@@ -33,7 +33,14 @@ class InputForm extends Component {
           state={this.props.state}
           eduSchoolName={this.props.eduSchoolName}
         />
-        <PracticalExperience state={this.props.state} />
+        <PracticalExperience
+          state={this.props.state}
+          iptComp={this.props.iptComp}
+          iptPosi={this.props.iptPosi}
+          iptTask={this.props.iptTask}
+          iptFrom={this.props.iptFrom}
+          iptTo={this.props.iptTo}
+        />
       </div>
     );
   }
