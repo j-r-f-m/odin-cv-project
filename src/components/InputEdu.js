@@ -37,7 +37,6 @@ class InputEdu extends Component {
                 onChange={this.props.eduSchoolName}
                 value={school.schoolName2}
               />
-
               <input
                 type="text"
                 placeholder="Title Of Study"
@@ -54,61 +53,19 @@ class InputEdu extends Component {
                 onChange={this.props.iptDateStudy}
                 value={school.dateOfStudy}
               />
-              {/* <div className="button--container">
-                <button onClick={this.props.onAddEduc}>Add</button>
-                <button>Delete</button>
-              </div> */}
+              <button
+                className={`form--inputs ${school.id}`}
+                onClick={this.props.onDltEdu}
+              >
+                Delete
+              </button>
             </form>
           );
         })}
 
         <div className="button--container">
           <button onClick={this.props.onAddEduc}>Add</button>
-          <button>Delete</button>
         </div>
-        {/* <form className="input--form">
-          <input
-            type="text"
-            placeholder="School Name"
-            className="form--inputs"
-            name="schoolName"
-            onChange={this.props.iptSchool}
-          />
-          <input
-            type="text"
-            placeholder="Title Of Study"
-            className="form--inputs"
-            name="titleOfStudy"
-            onChange={this.props.iptTitleStudy}
-          />
-          <input
-            type="text"
-            placeholder="Date of Study"
-            className="form--inputs"
-            name="dateOfStudy"
-            onChange={this.props.iptDateStudy}
-          />
-          <div className="button--container">
-            <button onClick={this.props.onAddEduc}>Add</button>
-            <button>Delete</button>
-          </div>
-        </form> */}
-
-        {/* {this.props.state.schools.map((school) => {
-              return (
-                <div key={school.schoolName} className="output--school">
-                  <div className="school--info">
-                    School Name: {school.schoolName}
-                  </div>
-                  <div className="school--info">
-                    Title Of Study: {school.titleOfStudy}
-                  </div>
-                  <div className="school--info">
-                    Date of Study: {school.dateOfStudy}
-                  </div>
-                </div>
-              );
-            })} */}
       </div>
     );
   }

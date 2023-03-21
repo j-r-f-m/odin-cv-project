@@ -131,6 +131,7 @@ table {
 /* ---------------------------- RESET END ----------------------------------- */
 body {
   font-family: "Roboto", sans-serif;
+  background-color: lightgray;
 }
 
 #app--container {

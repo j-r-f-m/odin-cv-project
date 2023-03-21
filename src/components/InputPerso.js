@@ -17,6 +17,7 @@ class InputPerso extends Component {
             name="firstName"
             // acces function passed from App.js with propsasdf
             onChange={this.props.iptFirst}
+            value={this.props.state.persInfo.firstName}
           />
           <input
             type="text"
@@ -24,6 +25,7 @@ class InputPerso extends Component {
             className="form--inputs"
             name="lastName"
             onChange={this.props.iptLast}
+            value={this.props.state.persInfo.lastName}
           />
           <input
             type="text"
@@ -31,6 +33,7 @@ class InputPerso extends Component {
             className="form--inputs"
             name="title"
             onChange={this.props.iptTitle}
+            value={this.props.state.persInfo.title}
           />
         </form>
       </div>

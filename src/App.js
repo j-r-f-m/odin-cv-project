@@ -19,35 +19,38 @@ class App extends Component {
     this.iptDateOfStudy = this.iptDateOfStudy.bind(this);
     this.eduSchoolName = this.eduSchoolName.bind(this);
 
-    // state for personal information
+    // ----------------------------------- state -------------------------------
     this.state = {
       persInfo: {
-        firstName: "",
-        lastName: "",
-        title: "",
+        firstName: "Jonas",
+        lastName: "Mösch",
+        title: "M.Sc.",
       },
 
-      // DELETE ?????
-      schoolInfo: {
-        schoolName: "",
-        titleOfStudy: "",
-        dateOfStudy: "",
-        id: uniqid(),
-      },
-
+      // array containing educational experience objects
       schools: [
         {
-          schoolName2: "name12",
-          schoolName: "name1",
-          titleOfStudy: "titleStudy1",
-          dateOfStudy: "date1",
+          schoolName2: "Anna-Schmidt-Schule",
+          titleOfStudy: "Schule",
+          dateOfStudy: "2010-2018",
           id: uniqid(),
         },
         {
-          schoolName2: "name22",
-          schoolName: "name2",
-          titleOfStudy: "titleStudy2",
-          dateOfStudy: "date2",
+          schoolName2: "TU München",
+          titleOfStudy: "Bauing. M.Sc.",
+          dateOfStudy: "2018-2023",
+          id: uniqid(),
+        },
+      ],
+
+      // array cotaining practical experience
+      practical: [
+        {
+          compName: "Ilp2",
+          position: "Student Worker",
+          task: "Prüfung",
+          from: "2016",
+          to: "2020",
           id: uniqid(),
         },
       ],
@@ -189,27 +192,70 @@ class App extends Component {
     });
   };
 
+  /**
+   * add new educational experiences form
+   * @param {object} e event-object
+   */
   onAddEdu = (e) => {
     console.log("hi");
     // prevent reloading page on button press
     e.preventDefault();
 
+    // save old array
     const oldSchoolsArr = this.state.schools;
 
+    // create new object
     const newSchool = {
-      schoolName2: "School Names",
-      titleOfStudy: "Title Of Study",
-      dateOfStudy: "Date Of Study",
+      schoolName2: "",
+      titleOfStudy: "",
+      dateOfStudy: "",
       id: uniqid(),
     };
+
+    // copy contents of old school-array to new school-array including new object
     const newSchoolsArr = [...oldSchoolsArr, newSchool];
 
+    // set state
     this.setState({
       schools: newSchoolsArr,
     });
 
     console.log(this.state.schools);
   };
+
+  /**
+   * delete educational experience
+   * @param {object} e event-object
+   */
+  onDltEdu = (e) => {
+    e.preventDefault();
+    // console.log("delete");
+
+    // get id
+    const idObj = e.target.classList[1];
+
+    const schoolArr = this.state.schools;
+    const oldSchoolArr = [...schoolArr];
+    //console.log(schoolArr);
+
+    const idx = oldSchoolArr.findIndex((ele) => ele.id === idObj);
+    console.log(idx);
+
+    const firstHalfArr = oldSchoolArr.slice(0, idx);
+    console.log(firstHalfArr);
+    const secondHalfArr = oldSchoolArr.slice(idx + 1);
+    console.log(secondHalfArr);
+    const newSchoolArr = firstHalfArr.concat(secondHalfArr);
+    console.log(newSchoolArr);
+
+    this.setState({
+      schools: newSchoolArr,
+    });
+  };
+
+  // -------------------------- practical experience functionality ------------_
+
+  iptPractC;
 
   // render jsx to html??
   render() {
@@ -226,6 +272,7 @@ class App extends Component {
             iptTitleStudy={this.iptTitleOfStudy}
             iptDateStudy={this.iptDateOfStudy}
             onAddEduc={this.onAddEdu}
+            onDltEdu={this.onDltEdu}
             state={this.state}
             eduSchoolName={this.eduSchoolName}
           />
