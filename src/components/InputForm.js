@@ -40,6 +40,8 @@ class InputForm extends Component {
           iptTask={this.props.iptTask}
           iptFrom={this.props.iptFrom}
           iptTo={this.props.iptTo}
+          onAddComp={this.props.onAddComp}
+          onDltComp={this.props.onDltComp}
         />
       </div>
     );

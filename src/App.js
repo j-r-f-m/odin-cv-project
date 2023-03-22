@@ -368,10 +368,64 @@ class App extends Component {
   };
 
   /**
+   * add new educational experiences form
+   * @param {object} e event-object
+   */
+  onAddComp = (e) => {
+    // prevent reloading page on button press
+    e.preventDefault();
+
+    // save old array
+    const oldPractArr = this.state.practical;
+
+    // create new object
+    const newPract = {
+      compName: "",
+      position: "",
+      task: "",
+      from: "",
+      to: "",
+      id: uniqid(),
+    };
+
+    // copy contents of old school-array to new school-array including new object
+    const newPractArr = [...oldPractArr, newPract];
+
+    // set state
+    this.setState({
+      practical: newPractArr,
+    });
+  };
+
+  /**
    * delete educational experience
    * @param {object} e event-object
    */
-  onDltComp = (e) => {};
+  onDltComp = (e) => {
+    console.log("dlt");
+    // prevent reloading
+    e.preventDefault();
+    // get id
+    const idObj = e.target.classList[1];
+
+    // get practArr and copy content to new array
+    const practArr = this.state.practical;
+    const oldPractArr = [...practArr];
+
+    // get index of object corresponding to input field
+    const idx = oldPractArr.findIndex((ele) => ele.id === idObj);
+    console.log(idx);
+
+    const firstHalfArr = oldPractArr.slice(0, idx);
+    console.log(firstHalfArr);
+    const secondHalfArr = oldPractArr.slice(idx + 1);
+    console.log(secondHalfArr);
+    const newPractArr = firstHalfArr.concat(secondHalfArr);
+
+    this.setState({
+      practical: newPractArr,
+    });
+  };
 
   // render jsx to html??
   render() {
@@ -396,6 +450,8 @@ class App extends Component {
             iptTask={this.iptTask}
             iptFrom={this.iptFrom}
             iptTo={this.iptTo}
+            onAddComp={this.onAddComp}
+            onDltComp={this.onDltComp}
           />
           <Output state={this.state} />
         </section>

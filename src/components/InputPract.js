@@ -53,12 +53,17 @@ class InputPract extends Component {
                 value={comp.to}
                 onChange={this.props.iptTo}
               />
-              <button>Delete</button>
+              <button
+                className={`form--inputs ${comp.id}`}
+                onClick={this.props.onDltComp}
+              >
+                Delete
+              </button>
             </form>
           );
         })}
         <div className="button--container">
-          <button>Add</button>
+          <button onClick={this.props.onAddComp}>Add</button>
         </div>
       </div>
     );
