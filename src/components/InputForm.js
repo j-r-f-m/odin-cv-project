@@ -3,49 +3,84 @@ import InputPerso from "./InputPerso";
 import InputEdu from "./InputEdu";
 import PracticalExperience from "./InputPract";
 
-class InputForm extends Component {
-  constructor(props) {
-    super(props);
-  }
+const InputForm = (props) => {
+  return (
+    <div id="input--form--container">
+      {/* access passed function from App.js with props-object and pass it to
+      PersonalInformation.js wiht props */}
+      <InputPerso
+        iptFirst={props.iptFirst}
+        iptLast={props.iptLast}
+        iptTitle={props.iptTitle}
+        state={props.state}
+      />
+      <InputEdu
+        iptSchoolName={props.iptSchoolName}
+        iptTitleStudy={props.iptTitleStudy}
+        iptDateStudy={props.iptDateStudy}
+        onAddEduc={props.onAddEduc}
+        onDltEdu={props.onDltEdu}
+        newInputEdu={props.newInputEdu}
+        state={props.state}
+        eduSchoolName={props.eduSchoolName}
+      />
+      <PracticalExperience
+        state={props.state}
+        iptComp={props.iptComp}
+        iptPosi={props.iptPosi}
+        iptTask={props.iptTask}
+        iptFrom={props.iptFrom}
+        iptTo={props.iptTo}
+        onAddComp={props.onAddComp}
+        onDltComp={props.onDltComp}
+      />
+    </div>
+  );
+};
 
-  test = () => {
-    console.log(this.props);
-  };
+// class InputForm extends Component {
+//   constructor(props) {
+//     super(props);
+//   }
 
-  render() {
-    return (
-      <div id="input--form--container">
-        {/* access passed function from App.js with props-object and pass it to
-        PersonalInformation.js wiht props */}
-        <InputPerso
-          iptFirst={this.props.iptFirst}
-          iptLast={this.props.iptLast}
-          iptTitle={this.props.iptTitle}
-          state={this.props.state}
-        />
-        <InputEdu
-          iptSchoolName={this.props.iptSchoolName}
-          iptTitleStudy={this.props.iptTitleStudy}
-          iptDateStudy={this.props.iptDateStudy}
-          onAddEduc={this.props.onAddEduc}
-          onDltEdu={this.props.onDltEdu}
-          newInputEdu={this.props.newInputEdu}
-          state={this.props.state}
-          eduSchoolName={this.props.eduSchoolName}
-        />
-        <PracticalExperience
-          state={this.props.state}
-          iptComp={this.props.iptComp}
-          iptPosi={this.props.iptPosi}
-          iptTask={this.props.iptTask}
-          iptFrom={this.props.iptFrom}
-          iptTo={this.props.iptTo}
-          onAddComp={this.props.onAddComp}
-          onDltComp={this.props.onDltComp}
-        />
-      </div>
-    );
-  }
-}
+//   test = () => {
+//     console.log(props);
+//   };
+
+//   render() {
+//     return (
+//       <div id="input--form--container">
+//         {/* access passed function from App.js with props-object and pass it to
+//         PersonalInformation.js wiht props */}
+//         <InputPerso
+//           iptFirst={props.iptFirst}
+//           iptLast={props.iptLast}
+//           iptTitle={props.iptTitle}
+//           state={props.state}
+//         />
+//         <InputEdu
+//           iptSchoolName={props.iptSchoolName}
+//           iptTitleStudy={props.iptTitleStudy}
+//           iptDateStudy={props.iptDateStudy}
+//           onAddEduc={props.onAddEduc}
+//           onDltEdu={props.onDltEdu}
+//           newInputEdu={props.newInputEdu}
+//           state={props.state}
+//           eduSchoolName={props.eduSchoolName}
+//         />
+//         <PracticalExperience
+//           state={props.state}
+//           iptComp={props.iptComp}
+//           iptPosi={props.iptPosi}
+//           iptTask={props.iptTask}
+//           iptFrom={props.iptFrom}
+//           iptTo={props.iptTo}
+//           onAddComp={props.onAddComp}
+//           onDltComp={props.onDltComp}
+//         />
+//       </div>
+//     );
+//   }
+// }
 
 export default InputForm;
